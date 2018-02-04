@@ -15,7 +15,8 @@ namespace CRSTNative
 
             MainPage = new CRSTNative.MainPage
             {
-                Title = "CRST"
+                Title = "CRST",
+                HeightRequest = 50
             };
 
         }

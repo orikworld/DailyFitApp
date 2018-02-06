@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CRSTNative.Client.Infrastructure\CRSTNative.Client.Infrastructure\CRSTNative.Client.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\CRSTNative.General\CRSTNative.General.csproj" />
     <ProjectReference Include="..\..\CRSTNative.Infrastructure\CRSTNative.Infrastructure.csproj" />
   </ItemGroup>
 
@@ -20,11 +20,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
+    <Compile Update="Core\Views\Implementations\BaseMasterDetailPage.xaml.cs">
+      <DependentUpon>BaseMasterDetailPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Core\Views\Implementations\BaseContentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Core\Views\Implementations\BaseMasterDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

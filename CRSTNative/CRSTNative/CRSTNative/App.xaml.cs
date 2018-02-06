@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using CommonServiceLocator;
+using CRSTNative.AppStart;
+using CRSTNative.Client.Infrastructure.Core.Views.Implementations;
+using CRSTNative.Client.Infrastructure.Utilities.Navigation;
+using CRSTNative.Infrastructure.DependencyInjection;
 using Xamarin.Forms;
 
 namespace CRSTNative
@@ -12,12 +12,13 @@ namespace CRSTNative
 		public App ()
 		{
 			InitializeComponent();
+		    DependencyHelper.SetDependencies();
+		    ServiceLocator.SetLocatorProvider(() => DependencyManager.Instance.ServiceLocator);
 
-            MainPage = new CRSTNative.MainPage
-            {
-                Title = "CRST",
-                HeightRequest = 50
-            };
+		    Page startingPage = null;
+
+		    startingPage = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.MenuPage.ToString());
+		    MainPage = new BaseNavigationPage(startingPage);
 
         }
 

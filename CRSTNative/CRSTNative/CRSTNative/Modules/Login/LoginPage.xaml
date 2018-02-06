@@ -1,0 +1,10 @@
+﻿<implementations:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:implementations="clr-namespace:CRSTNative.Client.Infrastructure.Core.Views.Implementations;assembly=CRSTNative.Client.Infrastructure"
+             x:Class="CRSTNative.Modules.Login.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Command="{Binding LoginCommand}" Text="Sign in"/>
+        </StackLayout>
+    </ContentPage.Content>
+</implementations:BaseContentPage>

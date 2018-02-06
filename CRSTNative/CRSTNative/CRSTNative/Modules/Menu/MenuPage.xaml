@@ -1,0 +1,11 @@
+﻿<implementations:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:implementations="clr-namespace:CRSTNative.Client.Infrastructure.Core.Views.Implementations;assembly=CRSTNative.Client.Infrastructure"
+             xmlns:ovverides="clr-namespace:CRSTNative.Client.Infrastructure.Controls.Ovverides;assembly=CRSTNative.Client.Infrastructure"
+             x:Class="CRSTNative.Modules.Menu.MenuPage">
+    <implementations:BaseContentPage.Content>
+      <StackLayout>
+          <Label Text =" PSD"></Label>
+      </StackLayout>
+    </implementations:BaseContentPage.Content>
+</implementations:BaseContentPage>

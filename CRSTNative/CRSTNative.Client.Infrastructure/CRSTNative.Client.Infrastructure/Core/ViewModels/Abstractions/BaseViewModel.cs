@@ -10,15 +10,6 @@ namespace CRSTNative.Client.Infrastructure.Core.ViewModels.Abstractions
     /// <seealso cref="CRSTNative.Client.Infrastructure.Core.ViewModels.Implementations.NotifyPropertyChangedImplementation" />
     public abstract class BaseViewModel : NotifyPropertyChangedImplementation
     {
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BaseViewModel"/> class.
-        /// </summary>
-        protected BaseViewModel() { }
-
-        #endregion
-
         #region Properties
 
         /// <summary>

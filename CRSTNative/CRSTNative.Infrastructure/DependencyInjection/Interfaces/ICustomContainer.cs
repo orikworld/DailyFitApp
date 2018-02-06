@@ -8,6 +8,7 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Interfaces
     /// </summary>
     public interface ICustomContainer : IDisposable
     {
+
         /// <summary>
         /// Registers TInterface dependency as singleton
         /// </summary>

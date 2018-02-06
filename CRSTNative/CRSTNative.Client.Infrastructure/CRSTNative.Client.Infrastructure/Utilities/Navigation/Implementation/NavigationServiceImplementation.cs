@@ -6,6 +6,7 @@ using CRSTNative.Client.Infrastructure.Core.Views.Abstractions;
 using CRSTNative.Client.Infrastructure.Core.Views.Implementations;
 using CRSTNative.Client.Infrastructure.Utilities.Navigation.Abstraction;
 using CRSTNative.Infrastructure.DependencyInjection;
+using CRSTNative.Infrastructure.Resources;
 using Xamarin.Forms;
 
 namespace CRSTNative.Client.Infrastructure.Utilities.Navigation.Implementation
@@ -154,9 +155,10 @@ namespace CRSTNative.Client.Infrastructure.Utilities.Navigation.Implementation
                 _masterDetailPage = new BaseMasterDetailPage()
                 {
                     Detail = new BaseNavigationPage(
-                        DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.FirstPage.ToString())),
+                        DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.DashboardPage.ToString())),
                     MasterBehavior = MasterBehavior.Popover,
                 };
+               
 
                 SetMenuPage(viewId);
 
@@ -262,6 +264,7 @@ namespace CRSTNative.Client.Infrastructure.Utilities.Navigation.Implementation
         private void SetMenuPage(ViewId viewId)
         {
             var page = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(viewId.ToString());
+            page.Title = AppResources.txtCRST;
 
             _masterDetailPage.Master = page;
         }

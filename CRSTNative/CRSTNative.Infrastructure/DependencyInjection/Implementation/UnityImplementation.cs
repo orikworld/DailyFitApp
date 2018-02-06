@@ -9,17 +9,17 @@ using Unity.ServiceLocation;
 
 namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
 {
-    public class UnityImplementation : IDependencyContainerProvider
+    internal class UnityImplementation : IDependencyContainerProvider
     {
-        #region Private Fields
+        #region Private fields
 
         /// <summary>
-        /// The container
+        /// Holds unity container instance
         /// </summary>
         private readonly UnityContainer _container;
 
         /// <summary>
-        /// The service locator
+        /// Holds unity service locator instance
         /// </summary>
         private readonly UnityServiceLocator _serviceLocator;
 
@@ -28,7 +28,7 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         #region Constructors
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="UnityImplementation"/> class from being created.
+        /// Initialize container and service locator
         /// </summary>
         public UnityImplementation()
         {
@@ -154,7 +154,7 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         /// <param name="lifetimeCycle">Lifetime manager</param>
         public void RegisterInstance<TInterface>(TInterface instance, LifetimeCycle lifetimeCycle)
         {
-            _container.RegisterInstance(instance, GetLifetimeManager(lifetimeCycle));
+            _container.RegisterInstance(instance, GetLifeTimeManager(lifetimeCycle));
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         /// <param name="instance">Instance</param>
         public void RegisterInstance<TInterface>(string name, TInterface instance, LifetimeCycle lifetimeCycle)
         {
-            _container.RegisterInstance(name, instance, GetLifetimeManager(lifetimeCycle));
+            _container.RegisterInstance(name, instance, GetLifeTimeManager(lifetimeCycle));
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         /// <typeparam name="TTo">To type</typeparam>
         public void RegisterDependency<TFrom, TTo>(LifetimeCycle lifetimeCycle) where TTo : TFrom
         {
-            _container.RegisterType<TFrom, TTo>(GetLifetimeManager(lifetimeCycle));
+            _container.RegisterType<TFrom, TTo>(GetLifeTimeManager(lifetimeCycle));
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         /// <param name="lifetimeCycle">Specific lifetime manager</param>
         public void RegisterDependency<TFrom, TTo>(string name, LifetimeCycle lifetimeCycle) where TTo : TFrom
         {
-            _container.RegisterType<TFrom, TTo>(name, GetLifetimeManager(lifetimeCycle));
+            _container.RegisterType<TFrom, TTo>(name, GetLifeTimeManager(lifetimeCycle));
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         {
             _container.RegisterType<TFrom, TTo>(
                 name,
-                GetLifetimeManager(lifetimeCycle),
+                GetLifeTimeManager(lifetimeCycle),
                 new InjectionConstructor(new ResolvedParameter(
                     constructorInjectionParameters.Value,
                     constructorInjectionParameters.Key)));
@@ -325,21 +325,21 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         {
             _container.RegisterType<TFrom, TTo>(
                 name,
-                GetLifetimeManager(lifetimeCycle),
+                GetLifeTimeManager(lifetimeCycle),
                 new InjectionConstructor(new ResolvedParameter<TToBeInjected>(typeIdentifier ?? name)));
         }
 
         #endregion
 
-        #region IDisposible
+        #region IDisposable
 
         /// <summary>
-        ///  Disposes container
+        /// Disposes container
         /// </summary>
         public void Dispose()
         {
-            _container.Dispose();
             _serviceLocator.Dispose();
+            _container.Dispose();
         }
 
         #endregion
@@ -347,25 +347,31 @@ namespace CRSTNative.Infrastructure.DependencyInjection.Implementation
         #region Private Methods
 
         /// <summary>
-        /// Gets the lifetime manager.
+        /// Creates specific LifeTimeManager regardless to LifeTimeCycle enum
         /// </summary>
-        /// <param name="lifetimeCycle">The lifetime cycle.</param>
-        /// <returns></returns>
-        private LifetimeManager GetLifetimeManager(LifetimeCycle lifetimeCycle)
+        /// <param name="lifetimeCycle">Requested life time manager</param>
+        /// <returns>Specific LifeTimeManager</returns>
+        private LifetimeManager GetLifeTimeManager(LifetimeCycle lifetimeCycle)
         {
             LifetimeManager lifetimeManager = null;
 
-            switch(lifetimeCycle)
+            switch (lifetimeCycle)
             {
                 case LifetimeCycle.NewInstance:
-                    lifetimeManager = new TransientLifetimeManager();
-                    break;
+                    {
+                        lifetimeManager = new TransientLifetimeManager();
+                        break;
+                    }
                 case LifetimeCycle.SingletonInstance:
-                    lifetimeManager = new ContainerControlledLifetimeManager();
-                    break;
+                    {
+                        lifetimeManager = new ContainerControlledLifetimeManager();
+                        break;
+                    }
                 case LifetimeCycle.PerThreadInstance:
-                    lifetimeManager = new PerThreadLifetimeManager();
-                    break;
+                    {
+                        lifetimeManager = new PerThreadLifetimeManager();
+                        break;
+                    }
             }
 
             return lifetimeManager;

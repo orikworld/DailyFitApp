@@ -3,6 +3,7 @@ using CRSTNative.AppStart;
 using CRSTNative.Client.Infrastructure.Core.Views.Implementations;
 using CRSTNative.Client.Infrastructure.Utilities.Navigation;
 using CRSTNative.Infrastructure.DependencyInjection;
+using CRSTNative.Modules.Dashboard;
 using Xamarin.Forms;
 
 namespace CRSTNative
@@ -15,10 +16,10 @@ namespace CRSTNative
 		    DependencyHelper.SetDependencies();
 		    ServiceLocator.SetLocatorProvider(() => DependencyManager.Instance.ServiceLocator);
 
-		    Page startingPage = null;
-
-		    startingPage = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.MenuPage.ToString());
+		    var startingPage = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.LoginPage.ToString());
 		    MainPage = new BaseNavigationPage(startingPage);
+
+		    DependencyHelper.SetNavigationInstance(MainPage.Navigation);
 
         }
 

@@ -8,6 +8,7 @@
         //Common
         MenuPage = 0,
 
-        FirstPage = 100,
+        LoginPage = 100,
+        DashboardPage = 110,
     }
 }

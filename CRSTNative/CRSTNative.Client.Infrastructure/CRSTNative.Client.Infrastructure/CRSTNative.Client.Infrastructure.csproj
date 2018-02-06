@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\CRSTNative.General\CRSTNative.General.csproj" />
     <ProjectReference Include="..\..\CRSTNative.Infrastructure\CRSTNative.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace DailyFitNative.Cooperation.Behaviors
+namespace DailyFitNative.Interactions.Behaviors
 {
     public abstract class BaseBehavior<T>: Behavior<T> where T : BindableObject
     {

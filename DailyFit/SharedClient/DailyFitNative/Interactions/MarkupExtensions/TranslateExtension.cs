@@ -1,10 +1,10 @@
 ﻿using System;
-using DailyFitNative.Resources;
 using DailyFitNative.Common.Constants;
+using DailyFitNative.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DailyFitNative.Cooperation.MarkupExtensions
+namespace DailyFitNative.Interactions.MarkupExtensions
 {
     [ContentProperty("ResourceKey")]
     public class TranslateExtension : IMarkupExtension

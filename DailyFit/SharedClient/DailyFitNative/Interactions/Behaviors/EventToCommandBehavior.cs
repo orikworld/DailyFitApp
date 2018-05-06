@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace DailyFitNative.Cooperation.Behaviors
+namespace DailyFitNative.Interactions.Behaviors
 {
     public class EventToCommandBehavior : BaseBehavior<VisualElement>
     {

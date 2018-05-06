@@ -1,6 +1,6 @@
-﻿using CRSTNative.Client.Infrastructure.Core.ViewModels.Abstractions;
+﻿using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
 
-namespace CRSTNative.Modules.Dashboard
+namespace DailyFitNative.Modules.Dashboard
 {
     public class DashboardViewModel : BaseViewModel
     {

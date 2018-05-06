@@ -1,12 +1,11 @@
 ﻿using CommonServiceLocator;
-using CRSTNative.AppStart;
-using CRSTNative.Client.Infrastructure.Core.Views.Implementations;
-using CRSTNative.Client.Infrastructure.Utilities.Navigation;
-using CRSTNative.Infrastructure.DependencyInjection;
-using CRSTNative.Modules.Dashboard;
+using DailyFitNative.AppStart;
+using DailyFitNative.Infrastructure.Core.Views.Implementations;
+using DailyFitNative.Infrastructure.DependencyInjection;
+using DailyFitNative.Utilities.Navigation;
 using Xamarin.Forms;
 
-namespace CRSTNative
+namespace DailyFitNative
 {
 	public partial class App : Application
 	{

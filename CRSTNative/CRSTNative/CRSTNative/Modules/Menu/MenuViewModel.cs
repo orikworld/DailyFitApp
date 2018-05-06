@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CRSTNative.Client.Infrastructure.Core.ViewModels.Abstractions;
+using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
 
-namespace CRSTNative.Modules.Menu
+namespace DailyFitNative.Modules.Menu
 {
     public class MenuViewModel : BaseViewModel
     {

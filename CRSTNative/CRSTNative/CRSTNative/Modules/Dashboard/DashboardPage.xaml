@@ -1,8 +1,8 @@
 ﻿<implementations:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
                                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                                 xmlns:implementations="clr-namespace:CRSTNative.Client.Infrastructure.Core.Views.Implementations;assembly=CRSTNative.Client.Infrastructure"
-                                 xmlns:ovverides="clr-namespace:CRSTNative.Client.Infrastructure.Controls.Ovverides;assembly=CRSTNative.Client.Infrastructure"
-                                 x:Class="CRSTNative.Modules.Dashboard.DashboardPage">
+                                 xmlns:implementations1="clr-namespace:CRSTNative.Client.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
+                                 xmlns:implementations="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
+                                 x:Class="DailyFitNative.Modules.Dashboard.DashboardPage">
     <implementations:BaseContentPage.Content>
         <StackLayout>
             <Label Text =" DashBoard"></Label>

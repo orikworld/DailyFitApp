@@ -1,8 +1,8 @@
-﻿using CRSTNative.Client.Infrastructure.Core.ViewModels.Abstractions;
-using CRSTNative.Client.Infrastructure.Core.Views.Implementations;
+﻿using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
 using Xamarin.Forms.Xaml;
+using BaseContentPage = DailyFitNative.Infrastructure.Core.Views.Implementations.BaseContentPage;
 
-namespace CRSTNative.Modules.Dashboard
+namespace DailyFitNative.Modules.Dashboard
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DashboardPage : BaseContentPage

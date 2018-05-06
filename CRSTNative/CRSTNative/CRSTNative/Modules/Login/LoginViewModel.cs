@@ -1,9 +1,9 @@
 ﻿using System.Windows.Input;
-using CRSTNative.Client.Infrastructure.Core.ViewModels.Abstractions;
-using CRSTNative.Client.Infrastructure.Utilities.Navigation;
+using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
+using DailyFitNative.Utilities.Navigation;
 using Xamarin.Forms;
 
-namespace CRSTNative.Modules.Login
+namespace DailyFitNative.Modules.Login
 {
     public class LoginViewModel : BaseViewModel
     {

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Unity" Version="5.8.6" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
   </ItemGroup>
@@ -50,8 +51,6 @@
 
   <ItemGroup>
     <Folder Include="Common\Attributes\" />
-    <Folder Include="Common\Enums\" />
-    <Folder Include="Common\Models\" />
     <Folder Include="Controls\Views\" />
     <Folder Include="Services\" />
     <Folder Include="Repositories\" />

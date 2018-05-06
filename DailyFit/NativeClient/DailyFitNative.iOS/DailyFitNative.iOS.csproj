@@ -122,13 +122,13 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\CRSTNative\DailyFitNative.csproj">
-      <Project>{7CE58D62-EB7A-42E9-9516-D6F5032B1A38}</Project>
+    <ProjectReference Include="..\..\SharedClient\DailyFitNative\DailyFitNative.csproj">
+      <Project>{ca665206-0b2e-462d-b45a-257ae37bd9b2}</Project>
       <Name>DailyFitNative</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

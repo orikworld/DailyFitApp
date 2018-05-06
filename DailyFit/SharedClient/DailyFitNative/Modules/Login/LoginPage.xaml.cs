@@ -1,4 +1,5 @@
 ﻿using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BaseContentPage = DailyFitNative.Infrastructure.Core.Views.Implementations.BaseContentPage;
 
@@ -10,6 +11,8 @@ namespace DailyFitNative.Modules.Login
         public LoginPage(BaseViewModel viewModel) : base(viewModel)
         {
             InitializeComponent();
+
+			NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace DailyFitNative.Modules.Login
 
         private void LoginCommandExecute()
         {
-            NavigationService.Instance.SetRootPageAsunc(ViewId.MenuPage);
+           // NavigationService.Instance.SetRootPageAsunc(ViewId.MenuPage);
         }
     }
 }

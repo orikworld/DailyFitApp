@@ -32,7 +32,7 @@ namespace DailyFitNative.Interactions.MarkupExtensions
                     AppResources.Culture.Name));
             }
 
-            return string.Empty;
+            return translation;
         }
 
         #endregion

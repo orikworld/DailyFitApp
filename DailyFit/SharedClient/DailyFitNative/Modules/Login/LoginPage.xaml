@@ -1,11 +1,62 @@
 ﻿<implementations1:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:implementations="clr-namespace:CRSTNative.Client.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
              xmlns:implementations1="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
-             x:Class="DailyFitNative.Modules.Login.LoginPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Button Command="{Binding LoginCommand}" Text="Sign in"/>
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:markupExtensions="clr-namespace:DailyFitNative.Interactions.MarkupExtensions;assembly=DailyFitNative"
+             xmlns:ovverides="clr-namespace:DailyFitNative.Controls.Ovverides;assembly=DailyFitNative"
+             xmlns:resources="clr-namespace:DailyFitNative.Resources;assembly=DailyFitNative"
+             x:Class="DailyFitNative.Modules.Login.LoginPage"
+             BackgroundImage="{x:Static resources:Images.LoginBackGround}">
+    <Grid>
+        <BoxView BackgroundColor="Black" Opacity="0.5" VerticalOptions="FillAndExpand"/>
+        <Grid RowSpacing="16"
+              Padding="{StaticResource BigLateralSidesThickness}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label VerticalOptions="Center"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Daily "
+                          ForegroundColor="{StaticResource PrimaryTextColor}"
+                          FontSize="36"/>
+                        <Span Text="Fit"
+                          ForegroundColor="{StaticResource ButtonBackgroundColor}"
+                          FontSize="36"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <ovverides:ExtendedEnty Grid.Row="1"
+                                VerticalOptions="Center"
+                                Text="denysslwf5@live.com"
+                                Placeholder="{markupExtensions:Translate txtEmail}"
+                                Style="{StaticResource ExtendedEntryStyle}"/>
+
+            <ovverides:ExtendedEnty Grid.Row="2"
+                                VerticalOptions="Center"
+                                Placeholder="{markupExtensions:Translate txtPassword}"
+                                IsPassword="True"
+                                Style="{StaticResource ExtendedEntryStyle}"/>
+
+            <Label Grid.Row="3"
+               HorizontalTextAlignment="End"
+               HorizontalOptions="End"
+               FontSize="12"
+               TextColor="{StaticResource PlaceHolderColor}"
+               Text="{markupExtensions:Translate txtForgotPassword}"/>
+
+            <Button Grid.Row="4"
+                Margin="{StaticResource BigLateralSidesThickness}"
+                VerticalOptions="Center"
+                Command="{Binding LoginCommand}" 
+                Text="{markupExtensions:Translate txtSignIn}" 
+                Style="{StaticResource BigRoundedButtonStyle}"/>
+        </Grid>
+    </Grid>
 </implementations1:BaseContentPage>

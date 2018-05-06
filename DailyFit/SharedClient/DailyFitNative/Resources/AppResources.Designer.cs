@@ -68,5 +68,41 @@ namespace DailyFitNative.Resources {
                 return ResourceManager.GetString("txtAppName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string txtEmail {
+            get {
+                return ResourceManager.GetString("txtEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forgot your password?.
+        /// </summary>
+        public static string txtForgotPassword {
+            get {
+                return ResourceManager.GetString("txtForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string txtPassword {
+            get {
+                return ResourceManager.GetString("txtPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign In.
+        /// </summary>
+        public static string txtSignIn {
+            get {
+                return ResourceManager.GetString("txtSignIn", resourceCulture);
+            }
+        }
     }
 }

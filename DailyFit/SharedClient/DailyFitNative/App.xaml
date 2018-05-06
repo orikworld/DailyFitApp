@@ -1,10 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ovverides="clr-namespace:DailyFitNative.Controls.Ovverides;assembly=DailyFitNative"
              x:Class="DailyFitNative.App">
-	<Application.Resources>
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Colors -->
+            <Color x:Key="PrimaryTextColor">White</Color>
+            <Color x:Key="PlaceHolderColor">#b1b1b7</Color>
+            <Color x:Key="ButtonBackgroundColor">#52bfbe</Color>
 
-		<!-- Application resource dictionary -->
+            <Color x:Key="EntryBackgroundColor">#5A5D71</Color>
 
-	</Application.Resources>
+            <!-- Thickness -->
+
+            <Thickness x:Key="BigLateralSidesThickness">40, 0, 40, 0</Thickness>
+
+            <!-- Styles -->
+
+            <Style x:Key="ExtendedEntryStyle" TargetType="ovverides:ExtendedEnty">
+                <Setter Property="Opacity" Value="0.5" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource EntryBackgroundColor}" />
+            </Style>
+
+            <Style x:Key="BigRoundedButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="24" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

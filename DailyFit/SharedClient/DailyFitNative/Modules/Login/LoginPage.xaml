@@ -4,6 +4,7 @@
              xmlns:markupExtensions="clr-namespace:DailyFitNative.Interactions.MarkupExtensions;assembly=DailyFitNative"
              xmlns:ovverides="clr-namespace:DailyFitNative.Controls.Ovverides;assembly=DailyFitNative"
              xmlns:resources="clr-namespace:DailyFitNative.Resources;assembly=DailyFitNative"
+             xmlns:views="clr-namespace:DailyFitNative.Controls.Views;assembly=DailyFitNative"
              x:Class="DailyFitNative.Modules.Login.LoginPage"
              BackgroundImage="{x:Static resources:Images.LoginBackGround}">
     <Grid>
@@ -32,17 +33,17 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <ovverides:ExtendedEnty Grid.Row="1"
-                                VerticalOptions="Center"
-                                Text="denysslwf5@live.com"
-                                Placeholder="{markupExtensions:Translate txtEmail}"
-                                Style="{StaticResource ExtendedEntryStyle}"/>
 
-            <ovverides:ExtendedEnty Grid.Row="2"
-                                VerticalOptions="Center"
-                                Placeholder="{markupExtensions:Translate txtPassword}"
-                                IsPassword="True"
-                                Style="{StaticResource ExtendedEntryStyle}"/>
+            <views:EntryWithFrameBorder  Grid.Row="1"
+                                         Placeholder="{markupExtensions:Translate txtEmail}"
+                                         Style="{StaticResource ExtendedEntryStyle}"
+                                         VerticalOptions="Center"/>
+
+            <views:EntryWithFrameBorder  Grid.Row="2"
+                                         Placeholder="{markupExtensions:Translate txtPassword}"
+                                         IsPassword="True"
+                                         Style="{StaticResource ExtendedEntryStyle}"
+                                         VerticalOptions="Center"/>
 
             <Label Grid.Row="3"
                HorizontalTextAlignment="End"

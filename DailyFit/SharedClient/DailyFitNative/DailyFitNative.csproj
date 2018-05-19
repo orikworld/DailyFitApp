@@ -37,10 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Modules\Dashboard\DashboardPage.xaml">
+    <EmbeddedResource Update="Controls\Views\EntryWithFrameBorder.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Modules\Login\LoginPage.xaml">
+    <EmbeddedResource Update="Modules\Dashboard\DashboardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Modules\Menu\MenuPage.xaml">
@@ -54,7 +54,6 @@
 
   <ItemGroup>
     <Folder Include="Common\Attributes\" />
-    <Folder Include="Controls\Views\" />
     <Folder Include="Services\" />
     <Folder Include="Repositories\" />
   </ItemGroup>

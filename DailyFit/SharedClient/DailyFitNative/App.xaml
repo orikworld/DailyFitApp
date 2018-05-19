@@ -2,6 +2,7 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ovverides="clr-namespace:DailyFitNative.Controls.Ovverides;assembly=DailyFitNative"
+             xmlns:views="clr-namespace:DailyFitNative.Controls.Views;assembly=DailyFitNative"
              x:Class="DailyFitNative.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -18,12 +19,11 @@
 
             <!-- Styles -->
 
-            <Style x:Key="ExtendedEntryStyle" TargetType="ovverides:ExtendedEnty">
-                <Setter Property="Opacity" Value="0.5" />
+            <Style x:Key="ExtendedEntryStyle" TargetType="views:EntryWithFrameBorder">
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}"/>
-                <Setter Property="BackgroundColor" Value="{StaticResource EntryBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource EntryBackgroundColor}"/>
             </Style>
 
             <Style x:Key="BigRoundedButtonStyle" TargetType="Button">

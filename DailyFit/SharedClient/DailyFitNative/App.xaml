@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ovverides="clr-namespace:DailyFitNative.Controls.Ovverides;assembly=DailyFitNative"
-             xmlns:views="clr-namespace:DailyFitNative.Controls.Views;assembly=DailyFitNative"
+             xmlns:views1="clr-namespace:DailyFitNative.Infrastructure.Controls.Views;assembly=DailyFitNative.Infrastructure"
              x:Class="DailyFitNative.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -19,7 +18,7 @@
 
             <!-- Styles -->
 
-            <Style x:Key="ExtendedEntryStyle" TargetType="views:EntryWithFrameBorder">
+            <Style x:Key="ExtendedEntryStyle" TargetType="views1:EntryWithFrameBorder">
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}"/>
@@ -31,6 +30,19 @@
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
             </Style>
+            
+            <!-- Validation -->
+            <Style x:Key="ValidationLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style x:Key="DetailsLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource PlaceHolderColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

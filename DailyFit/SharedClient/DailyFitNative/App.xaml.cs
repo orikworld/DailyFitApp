@@ -1,9 +1,9 @@
 ﻿using CommonServiceLocator;
 using DailyFitNative.AppStart;
-using DailyFitNative.Common.Constants;
 using DailyFitNative.Infrastructure.Core.Views.Implementations;
 using DailyFitNative.Infrastructure.DependencyInjection;
-using DailyFitNative.Utilities.Navigation;
+using DailyFitNative.Infrastructure.Utilities.Navigation;
+using DailyFitNative.Models.Constants;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;

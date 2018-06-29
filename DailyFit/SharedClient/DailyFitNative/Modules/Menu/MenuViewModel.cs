@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
+﻿using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
 
 namespace DailyFitNative.Modules.Menu
 {
-    public class MenuViewModel : BaseViewModel
+	public class MenuViewModel : BaseViewModel
     {
         #region Constractors
 

@@ -1,6 +1,7 @@
-﻿<implementations1:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<implementations1:BaseContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:implementations1="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
+    xmlns:implementations1="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative.Infrastructure"
              x:Class="DailyFitNative.Modules.Menu.MenuPage">
     <implementations1:BaseContentPage.Content>
       <StackLayout>

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DailyFitNative.Controls.Ovverides;
-using DailyFitNative.iOS.Renderers;
-using Foundation;
+﻿using DailyFitNative.iOS.Renderers;
+using DailyFitNative.Infrastructure.Controls.Ovverides;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;

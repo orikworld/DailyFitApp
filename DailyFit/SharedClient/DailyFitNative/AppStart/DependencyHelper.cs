@@ -1,16 +1,13 @@
-﻿using DailyFitNative.Modules.Menu;
-using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
+﻿using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
 using DailyFitNative.Infrastructure.DependencyInjection;
 using DailyFitNative.Infrastructure.DependencyInjection.Interfaces;
+using DailyFitNative.Infrastructure.Utilities.Navigation;
+using DailyFitNative.Infrastructure.Utilities.Navigation.Abstraction;
+using DailyFitNative.Infrastructure.Utilities.Navigation.Implementation;
 using DailyFitNative.Modules.Dashboard;
 using DailyFitNative.Modules.Login;
-using DailyFitNative.Utilities.Navigation;
-using DailyFitNative.Utilities.Navigation.Abstraction;
-using DailyFitNative.Utilities.Navigation.Implementation;
+using DailyFitNative.Modules.Menu;
 using Xamarin.Forms;
-using DashboardPage = DailyFitNative.Modules.Dashboard.DashboardPage;
-using LoginPage = DailyFitNative.Modules.Login.LoginPage;
-using MenuPage = DailyFitNative.Modules.Menu.MenuPage;
 
 namespace DailyFitNative.AppStart
 {

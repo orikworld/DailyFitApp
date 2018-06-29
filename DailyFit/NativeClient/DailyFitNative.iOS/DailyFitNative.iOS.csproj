@@ -123,9 +123,13 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SharedClient\DailyFitNative.Infrastructure\DailyFitNative.Infrastructure.csproj">
+      <Project>{FA4B1EAE-6539-43B1-BEAB-6C97CBDF08C6}</Project>
+      <Name>DailyFitNative.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SharedClient\DailyFitNative\DailyFitNative.csproj">
       <Project>{ca665206-0b2e-462d-b45a-257ae37bd9b2}</Project>
       <Name>DailyFitNative</Name>

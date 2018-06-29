@@ -1,9 +1,7 @@
 ﻿using Android.Content;
-using Android.Content.Res;
 using Android.Graphics.Drawables;
-using Android.Text;
-using DailyFitNative.Controls.Ovverides;
 using DailyFitNative.Droid.Renderers;
+using DailyFitNative.Infrastructure.Controls.Ovverides;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Color = Android.Graphics.Color;

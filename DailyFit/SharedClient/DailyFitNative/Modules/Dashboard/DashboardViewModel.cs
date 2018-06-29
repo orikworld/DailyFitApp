@@ -2,7 +2,7 @@
 
 namespace DailyFitNative.Modules.Dashboard
 {
-    public class DashboardViewModel : BaseViewModel
+	public class DashboardViewModel : BaseViewModel
     {
         #region Constractors
 

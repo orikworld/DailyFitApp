@@ -5,6 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controls\Ovverides\Validation\**" />
+    <Compile Remove="Interactions\Behaviors\Validation\**" />
+    <EmbeddedResource Remove="Controls\Ovverides\Validation\**" />
+    <EmbeddedResource Remove="Interactions\Behaviors\Validation\**" />
+    <None Remove="Controls\Ovverides\Validation\**" />
+    <None Remove="Interactions\Behaviors\Validation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controls\Ovverides\AsteriskLabel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Unity" Version="5.8.6" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
   </ItemGroup>

@@ -5,13 +5,13 @@ using Xamarin.Forms;
 
 namespace DailyFitNative.Infrastructure.Controls.Ovverides.Validation
 {
-	public class ValidationContainer : Grid, IValidator, IValidationContainer
+	public class ValidationContainer : Grid, IValidity, IValidationContainer
 	{
 		#region Bindable
 
 		public static readonly BindableProperty ValidationScopeProperty = BindableProperty.Create(
-			nameof(ValidationRuleScope),
-			typeof(IValidationRuleScope),
+			nameof(ValidationRule),
+			typeof(IValidationRule),
 			typeof(ValidationContainer),
 			propertyChanged: ValidationScopePropertyChanged);
 
@@ -66,9 +66,9 @@ namespace DailyFitNative.Infrastructure.Controls.Ovverides.Validation
 
 		#region Properties
 
-		public IValidationRuleScope ValidationRuleScope
+		public IValidationRule ValidationRule
 		{
-			get => (IValidationRuleScope) GetValue(ValidationScopeProperty);
+			get => (IValidationRule) GetValue(ValidationScopeProperty);
 			set => SetValue(ValidationScopeProperty, value);
 		}
 
@@ -128,12 +128,12 @@ namespace DailyFitNative.Infrastructure.Controls.Ovverides.Validation
 
 		#endregion
 
-		#region Implementation of IValidator
+		#region Implementation of IValidity
 
 		public bool Validate() =>
 			IsValid = !IsValidationEnabled ||
 			          _input.Behaviors
-				          .OfType<IValidator>()
+				          .OfType<IValidity>()
 				          .All(validationBehavior => validationBehavior.Validate());
 
 		#endregion
@@ -189,9 +189,9 @@ namespace DailyFitNative.Infrastructure.Controls.Ovverides.Validation
 
 		private static void ValidationScopePropertyChanged(BindableObject bindable, object oldValue, object newValue)
 		{
-			if (!Equals(oldValue, newValue) && newValue is IValidationRuleScope validationScope)
+			if (!Equals(oldValue, newValue) && newValue is IValidationRule validationScope)
 			{
-				validationScope.AddValidator((IValidator) bindable);
+				validationScope.AddValidator((IValidity) bindable);
 			}
 		}
 

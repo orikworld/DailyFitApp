@@ -1,5 +1,4 @@
 ﻿using System;
-using DailyFitNative.Infrastructure.Controls.Ovverides.Validation.Abstactions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,7 +6,7 @@ using Xamarin.Forms.Xaml;
 namespace DailyFitNative.Infrastructure.Controls.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class EntryWithFrameBorder : Grid, IValidatableObject
+	public partial class EntryWithFrameBorder : Grid
 	{
 		#region Bindable
 
@@ -102,7 +101,7 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 
 		#region Implementation of IValidatableControl
 
-		event EventHandler<FocusEventArgs> IValidatableObject.Unfocused
+		event EventHandler<FocusEventArgs> Unfocused
 		{
 			add => Entry.Unfocused += value;
 			remove => Entry.Unfocused -= value;

@@ -4,7 +4,7 @@ namespace DailyFitNative.Infrastructure.Controls.Ovverides.Validation.Abstaction
 {
 	public interface IValidationContainer
 	{
-		IValidationRuleScope ValidationRuleScope { get; set; }
+		IValidationRule ValidationRule { get; set; }
 
 		bool IsValidationEnabled { get; set; }
 

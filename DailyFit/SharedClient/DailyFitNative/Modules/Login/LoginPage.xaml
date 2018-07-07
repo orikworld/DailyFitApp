@@ -1,10 +1,11 @@
-﻿<implementations1:BaseContentPage
+﻿<implementations:BaseContentPage
             xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:resources1="clr-namespace:DailyFitNative.Infrastructure.Resources;assembly=DailyFitNative.Infrastructure"
             xmlns:views="clr-namespace:DailyFitNative.Infrastructure.Controls.Views;assembly=DailyFitNative.Infrastructure"
             xmlns:markupExtensions="clr-namespace:DailyFitNative.Infrastructure.Interactions.MarkupExtensions;assembly=DailyFitNative.Infrastructure"
             xmlns:implementations1="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative.Infrastructure"
+            xmlns:implementations="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
             x:Class="DailyFitNative.Modules.Login.LoginPage"
             BackgroundImage="{x:Static resources1:Images.LoginBackGround}">
     <Grid>
@@ -33,22 +34,6 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <!--<validation:ValidationContainer  Grid.Row="1">
-                <validation:ValidationContainer.Input>
-                    
-                </validation:ValidationContainer.Input>
-            </validation:ValidationContainer>--><!--
-
-            <validation:ValidationContainer Grid.Row="1"
-                                            IsRequired="True"
-                                            IsValidationEnabled ="True"
-                                            ValidationLabelStyle="{StaticResource ValidationLabelStyle}"
-                                            LabelStyle="{StaticResource DetailsLabelStyle}">
-                <validation:ValidationContainer.Input>
-                    
-                </validation:ValidationContainer.Input>
-              
-            </validation:ValidationContainer>-->
 
             <views:EntryWithFrameBorder  Grid.Row="1"
                 Placeholder="{markupExtensions:Translate txtEmail}"
@@ -79,4 +64,4 @@
                 Style="{StaticResource BigRoundedButtonStyle}"/>
         </Grid>
     </Grid>
-</implementations1:BaseContentPage>
+</implementations:BaseContentPage>

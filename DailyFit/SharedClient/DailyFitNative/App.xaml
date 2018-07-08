@@ -16,9 +16,49 @@
 
             <Thickness x:Key="BigLateralSidesThickness">40, 0, 40, 0</Thickness>
 
+            <!-- Validation -->
+            <Style x:Key="ValidationLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="FontSize" Value="8" />
+            </Style>
+
+            <Style x:Key="DetailsLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource PlaceHolderColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="ValidationControlStyle" TargetType="views1:EntryWithFrameBorder">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="ValidationStates">
+
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="Silver"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Invalid">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="Red"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Valid">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="ForestGreen"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
             <!-- Styles -->
 
-            <Style x:Key="ExtendedEntryStyle" TargetType="views1:EntryWithFrameBorder">
+            <Style x:Key="ExtendedEntryStyle" TargetType="views1:EntryWithFrameBorder" BasedOn="{StaticResource ValidationControlStyle}">
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}"/>
@@ -31,17 +71,7 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
             </Style>
             
-            <!-- Validation -->
-            <Style x:Key="ValidationLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="Red" />
-                <Setter Property="FontSize" Value="14" />
-            </Style>
-
-            <Style x:Key="DetailsLabelStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="TextColor" Value="{StaticResource PlaceHolderColor}" />
-                <Setter Property="VerticalOptions" Value="Center" />
-            </Style>
+         
 
         </ResourceDictionary>
     </Application.Resources>

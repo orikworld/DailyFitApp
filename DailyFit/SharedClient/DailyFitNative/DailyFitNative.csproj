@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AppCenter" Version="1.7.0" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.7.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.7.0" />
@@ -15,12 +21,6 @@
     <ProjectReference Include="..\..\BusinessLayer\DailyFitNative.Services\DailyFitNative.Services.csproj" />
     <ProjectReference Include="..\..\DataLayer\DailyFitNative.Models\DailyFitNative.Models.csproj" />
     <ProjectReference Include="..\DailyFitNative.Infrastructure\DailyFitNative.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>

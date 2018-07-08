@@ -1,6 +1,6 @@
 ﻿namespace DailyFitNative.Infrastructure.Utilities.Validation.Abstractions
 {
-	public interface IValidationRule<T>
+	public interface IValidationRule<in T>
 	{
 		#region Properties
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using DailyFitNative.Models.Models.Base.Abstractions;
+using DailyFitNative.Models.Models.Shared.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,7 +8,7 @@ using Xamarin.Forms.Xaml;
 namespace DailyFitNative.Infrastructure.Controls.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class EntryWithFrameBorder : Grid
+	public partial class EntryWithFrameBorder : Grid, IValidationControl
 	{
 		#region Bindable
 
@@ -14,7 +16,8 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 			nameof(Text),
 			typeof(string),
 			typeof(EntryWithFrameBorder),
-			string.Empty);
+			string.Empty,
+			BindingMode.TwoWay);
 
 		public static readonly BindableProperty TextColorProperty = BindableProperty.Create(
 			nameof(TextColor),
@@ -45,6 +48,12 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 			typeof(EntryWithFrameBorder), 
 			Color.Gray);
 
+		public  static readonly BindableProperty BorderColorProperty = BindableProperty.Create(
+			nameof(BorderColor),
+			typeof(Color),
+			typeof(EntryWithFrameBorder),
+			Color.Gray);
+
 		#endregion
 
 		#region Constructors
@@ -57,6 +66,12 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 		#endregion
 
 		#region Properties
+
+		public event EventHandler<FocusEventArgs> Unfocused
+		{
+			add => Entry.Unfocused += value;
+			remove => Entry.Unfocused -= value;
+		}
 
 		public string Text
 		{
@@ -97,24 +112,10 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 
 		public bool IsPassword { get; set; }
 
-		#endregion
-
-		#region Implementation of IValidatableControl
-
-		event EventHandler<FocusEventArgs> Unfocused
+		public Color BorderColor
 		{
-			add => Entry.Unfocused += value;
-			remove => Entry.Unfocused -= value;
-		}
-
-		public void SetInvalidStyle(Style invalidStyle)
-		{
-			
-		}
-
-		public void RestoreDefaultStyle()
-		{
-			
+			get => (Color)GetValue(BorderColorProperty);
+			set => SetValue(BorderColorProperty, value);
 		}
 
 		#endregion

@@ -5,7 +5,7 @@ using DailyFitNative.Infrastructure.Utilities.Validation.Abstractions;
 
 namespace DailyFitNative.Infrastructure.Utilities.Validation.Implementations
 {
-	public class ValidatableObject<T> : NotifyPropertyChangedImplementation, IValidity
+	public class ValidatableObject<T> : NotifyPropertyChangedImplementation, IValidatableObject<T>
 	{
 
 		#region Private Fields
@@ -33,7 +33,7 @@ namespace DailyFitNative.Infrastructure.Utilities.Validation.Implementations
 
 		#region Properties
 
-		public IEnumerable<IValidationRule<T>> ValidationRules { get; }
+		public IList<IValidationRule<T>> ValidationRules { get; }
 
 		public IList<string> Errors
 		{

@@ -10,7 +10,7 @@ namespace DailyFitNative.Infrastructure.Utilities.Validation.RuleImplementations
 
 		#endregion
 
-		#region Properties
+		#region Public Methods
 
 		public bool Check(string value)
 		{

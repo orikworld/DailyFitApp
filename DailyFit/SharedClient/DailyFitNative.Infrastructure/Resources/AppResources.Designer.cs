@@ -61,6 +61,33 @@ namespace DailyFitNative.Infrastructure.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email required..
+        /// </summary>
+        public static string msgEmptyMail {
+            get {
+                return ResourceManager.GetString("msgEmptyMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password is required..
+        /// </summary>
+        public static string msgEmptyPassword {
+            get {
+                return ResourceManager.GetString("msgEmptyPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login should be a valid email address..
+        /// </summary>
+        public static string msgInvalidEmail {
+            get {
+                return ResourceManager.GetString("msgInvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DailyFIt.
         /// </summary>
         public static string txtAppName {

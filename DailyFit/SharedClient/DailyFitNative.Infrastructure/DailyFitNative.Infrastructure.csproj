@@ -5,16 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controls\Ovverides\Validation\**" />
+    <Compile Remove="Controls\Ovverides\Validations\**" />
     <Compile Remove="Interactions\Behaviors\Validation\**" />
-    <EmbeddedResource Remove="Controls\Ovverides\Validation\**" />
+    <EmbeddedResource Remove="Controls\Ovverides\Validations\**" />
     <EmbeddedResource Remove="Interactions\Behaviors\Validation\**" />
-    <None Remove="Controls\Ovverides\Validation\**" />
+    <None Remove="Controls\Ovverides\Validations\**" />
     <None Remove="Interactions\Behaviors\Validation\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controls\Ovverides\AsteriskLabel.cs" />
+    <Compile Remove="Controls\Ovverides\ValidationContainer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +39,18 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Resources\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

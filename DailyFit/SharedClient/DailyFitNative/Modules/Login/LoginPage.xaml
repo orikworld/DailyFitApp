@@ -3,9 +3,10 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:resources1="clr-namespace:DailyFitNative.Infrastructure.Resources;assembly=DailyFitNative.Infrastructure"
             xmlns:views="clr-namespace:DailyFitNative.Infrastructure.Controls.Views;assembly=DailyFitNative.Infrastructure"
-            xmlns:markupExtensions="clr-namespace:DailyFitNative.Infrastructure.Interactions.MarkupExtensions;assembly=DailyFitNative.Infrastructure"
-            xmlns:implementations1="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative.Infrastructure"
             xmlns:implementations="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
+            xmlns:markupExtensions="clr-namespace:DailyFitNative.Infrastructure.Interactions.MarkupExtensions;assembly=DailyFitNative.Infrastructure"
+            xmlns:validation="clr-namespace:DailyFitNative.Infrastructure.Controls.Ovverides.Validation;assembly=DailyFitNative.Infrastructure"
+            xmlns:behaviors="clr-namespace:DailyFitNative.Infrastructure.Interactions.Behaviors;assembly=DailyFitNative.Infrastructure"
             x:Class="DailyFitNative.Modules.Login.LoginPage"
             BackgroundImage="{x:Static resources1:Images.LoginBackGround}">
     <Grid>
@@ -35,30 +36,52 @@
                 </Label.FormattedText>
             </Label>
 
-            <views:EntryWithFrameBorder  Grid.Row="1"
-                Placeholder="{markupExtensions:Translate txtEmail}"
-                Style="{StaticResource ExtendedEntryStyle}"
-                VerticalOptions="Center">
-              
-            </views:EntryWithFrameBorder>
+            <validation:ValidationContainer Grid.Row="1"    
+                                            x:TypeArguments="x:String"
+                                            ValidationLabelStyle="{StaticResource ValidationLabelStyle}"
+                                            ValidatableObject="{Binding Login}">
+                <validation:ValidationContainer.Input>
+                    <views:EntryWithFrameBorder  Placeholder="{markupExtensions:Translate txtEmail}"
+                                                 Text="{Binding Login.Value}"
+                                                 Style="{StaticResource ExtendedEntryStyle}"
+                                                 VerticalOptions="Center">
+                        <views:EntryWithFrameBorder.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="Unfocused"
+                                                              Command="{Binding CheckButtonEnabledCommand}"/>
+                        </views:EntryWithFrameBorder.Behaviors>
+                    </views:EntryWithFrameBorder>
+                </validation:ValidationContainer.Input>
+            </validation:ValidationContainer>
 
-
-            <views:EntryWithFrameBorder  Grid.Row="2"
-                                         Placeholder="{markupExtensions:Translate txtPassword}"
-                                         IsPassword="True"
-                                         Style="{StaticResource ExtendedEntryStyle}"
-                                         VerticalOptions="Center"/>
-
+            <validation:ValidationContainer  Grid.Row="2"
+                                             x:TypeArguments="x:String"
+                                             ValidationLabelStyle="{StaticResource ValidationLabelStyle}"
+                                             ValidatableObject="{Binding Password}">
+                <validation:ValidationContainer.Input>
+                    <views:EntryWithFrameBorder  Placeholder="{markupExtensions:Translate txtPassword}"
+                                                 Text="{Binding Password.Value}"
+                                                 IsPassword="True"
+                                                 Style="{StaticResource ExtendedEntryStyle}"
+                                                 VerticalOptions="Center">
+                        <views:EntryWithFrameBorder.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="Unfocused"
+                                                               Command="{Binding CheckButtonEnabledCommand}"/>
+                        </views:EntryWithFrameBorder.Behaviors>
+                        </views:EntryWithFrameBorder>
+                </validation:ValidationContainer.Input>
+            </validation:ValidationContainer>
+        
             <Label Grid.Row="3"
                HorizontalTextAlignment="End"
                HorizontalOptions="End"
                FontSize="12"
                TextColor="{StaticResource PlaceHolderColor}"
                Text="{markupExtensions:Translate txtForgotPassword}"/>
-
             <Button Grid.Row="4"
+
                 Margin="{StaticResource BigLateralSidesThickness}"
                 VerticalOptions="Center"
+                IsEnabled="{Binding IsEnabledLogin}"
                 Command="{Binding LoginCommand}" 
                 Text="{markupExtensions:Translate txtSignIn}" 
                 Style="{StaticResource BigRoundedButtonStyle}"/>

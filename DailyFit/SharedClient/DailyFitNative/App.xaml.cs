@@ -1,5 +1,6 @@
 ﻿using CommonServiceLocator;
 using DailyFitNative.AppStart;
+using DailyFitNative.Infrastructure.Core.Views.Abstractions;
 using DailyFitNative.Infrastructure.Core.Views.Implementations;
 using DailyFitNative.Infrastructure.DependencyInjection;
 using DailyFitNative.Infrastructure.Utilities.Navigation;
@@ -20,12 +21,7 @@ namespace DailyFitNative
 			InitializeComponent();
 			DependencyHelper.SetDependencies();
 
-			ServiceLocator.SetLocatorProvider(() => DependencyManager.Instance.ServiceLocator);
-
-			var startingPage = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.LoginPage.ToString());
-			MainPage = new BaseNavigationPage(startingPage);
-
-			DependencyHelper.SetNavigationInstance(MainPage.Navigation);
+			ServiceLocator.SetLocatorProvider(() => DependencyManager.Instance.ServiceLocator);		
 		}
 
 		#endregion
@@ -35,6 +31,8 @@ namespace DailyFitNative
 		protected override void OnStart ()
 		{
 			StartAppCenter();
+
+			SetStartingPage();
 		}
 
 		protected override void OnSleep ()
@@ -50,6 +48,21 @@ namespace DailyFitNative
 		#endregion
 
 		#region Private Methods
+
+		private void SetStartingPage()
+		{
+			var startingPage = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.LoginPage.ToString());
+
+			if (startingPage is IBasePage basePage)
+			{
+				basePage.ViewId = ViewId.LoginPage;
+				basePage.Init();
+			}
+
+			MainPage = new BaseNavigationPage(startingPage);
+
+			DependencyHelper.SetNavigationInstance(MainPage.Navigation);
+		}
 
 		private void StartAppCenter()
 		{

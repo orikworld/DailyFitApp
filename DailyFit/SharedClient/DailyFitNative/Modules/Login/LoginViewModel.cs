@@ -35,7 +35,7 @@ namespace DailyFitNative.Modules.Login
 
 		public ICommand LoginCommand => new Command(LoginExecute);
 
-		public ICommand CheckButtonEnabledCommand => new Command(CheckButtonEnabledExecute);
+		public ICommand CheckLoginEnabledCommand => new Command(CheckLoginEnabledExecute);
 
 		public bool IsEnabledLogin
 		{
@@ -75,13 +75,10 @@ namespace DailyFitNative.Modules.Login
 
 		private void LoginExecute()
 		{
-			if (Password.Validate() && Login.Validate())
-			{
-				NavigationService.Instance.NavigateTo(ViewId.MenuPage);
-			}	
+			NavigationService.Instance.NavigateTo(ViewId.MenuPage);
 		}
 
-		private void CheckButtonEnabledExecute()
+		private void CheckLoginEnabledExecute()
 		{
 			SendPropertyChanged(() => IsEnabledLogin);
 		}
@@ -94,6 +91,5 @@ namespace DailyFitNative.Modules.Login
 		}
 
 		#endregion
-
 	}
 }

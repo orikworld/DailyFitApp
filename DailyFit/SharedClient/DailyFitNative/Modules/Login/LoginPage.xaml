@@ -65,26 +65,25 @@
                                                  VerticalOptions="Center">
                         <views:EntryWithFrameBorder.Behaviors>
                             <behaviors:EventToCommandBehavior EventName="Unfocused"
-                                                               Command="{Binding CheckButtonEnabledCommand}"/>
+                                                               Command="{Binding CheckLoginEnabledCommand}"/>
                         </views:EntryWithFrameBorder.Behaviors>
                         </views:EntryWithFrameBorder>
                 </validation:ValidationContainer.Input>
             </validation:ValidationContainer>
-        
-            <Label Grid.Row="3"
-               HorizontalTextAlignment="End"
-               HorizontalOptions="End"
-               FontSize="12"
-               TextColor="{StaticResource PlaceHolderColor}"
-               Text="{markupExtensions:Translate txtForgotPassword}"/>
-            <Button Grid.Row="4"
 
-                Margin="{StaticResource BigLateralSidesThickness}"
-                VerticalOptions="Center"
-                IsEnabled="{Binding IsEnabledLogin}"
-                Command="{Binding LoginCommand}" 
-                Text="{markupExtensions:Translate txtSignIn}" 
-                Style="{StaticResource BigRoundedButtonStyle}"/>
+            <Label Grid.Row="3"
+                   HorizontalTextAlignment="End"
+                   HorizontalOptions="End"
+                   FontSize="12"
+                   TextColor="{StaticResource PlaceHolderColor}"
+                   Text="{markupExtensions:Translate txtForgotPassword}"/>
+
+            <Button Grid.Row="4"
+                    VerticalOptions="Center"
+                    IsEnabled="{Binding IsEnabledLogin}"
+                    Command="{Binding LoginCommand}" 
+                    Text="{markupExtensions:Translate txtSignIn}" 
+                    Style="{StaticResource BigRoundedButtonStyle}"/>
         </Grid>
     </Grid>
 </implementations:BaseContentPage>

@@ -1,5 +1,4 @@
 ﻿using System;
-using DailyFitNative.Models.Models.Base.Abstractions;
 using DailyFitNative.Models.Models.Shared.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -67,7 +66,7 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 
 		#region Properties
 
-		public event EventHandler<FocusEventArgs> Unfocused
+		public new event EventHandler<FocusEventArgs> Unfocused
 		{
 			add => Entry.Unfocused += value;
 			remove => Entry.Unfocused -= value;

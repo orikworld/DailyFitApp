@@ -10,7 +10,7 @@
               VerticalOptions="Center"
               InputTransparent="True"
               BorderColor="{Binding BorderColor, Source={x:Reference Root}}"
-              CornerRadius="4" />
+              CornerRadius="6" />
     </Grid>
     <ovverides:ExtendedEnty
         x:Name="Entry"

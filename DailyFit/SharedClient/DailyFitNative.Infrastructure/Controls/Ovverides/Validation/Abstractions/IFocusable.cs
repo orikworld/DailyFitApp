@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace DailyFitNative.Models.Models.Base.Abstractions
+namespace DailyFitNative.Infrastructure.Controls.Ovverides.Validation.Abstractions
 {
     public interface IFocusable
     {

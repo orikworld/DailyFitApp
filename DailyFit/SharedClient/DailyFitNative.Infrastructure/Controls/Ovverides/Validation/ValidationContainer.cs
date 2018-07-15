@@ -1,7 +1,7 @@
 ﻿using System.Linq;
+using DailyFitNative.Infrastructure.Controls.Ovverides.Validation.Abstractions;
 using DailyFitNative.Infrastructure.Utilities.Validation.Abstractions;
 using DailyFitNative.Models.Enums;
-using DailyFitNative.Models.Models.Base.Abstractions;
 using Xamarin.Forms;
 
 namespace DailyFitNative.Infrastructure.Controls.Ovverides.Validation

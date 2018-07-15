@@ -1,12 +1,12 @@
 ﻿using System;
-using DailyFitNative.Models.Models.Shared.Abstractions;
+using DailyFitNative.Infrastructure.Controls.Ovverides.Validation.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 
 namespace DailyFitNative.Infrastructure.Controls.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EntryWithFrameBorder : Grid, IValidationControl
 	{
 		#region Bindable

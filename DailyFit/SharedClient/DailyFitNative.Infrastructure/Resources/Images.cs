@@ -2,7 +2,9 @@
 {
     public static class Images
     {
-	    public static readonly string LoginBackGround = "LoginBackGround.png";
+        public static readonly string LoginBackgroundImage = "LoginBackgroundImage.png";
+
+        public static readonly string Logo = "logo.png";
 
     }
 }

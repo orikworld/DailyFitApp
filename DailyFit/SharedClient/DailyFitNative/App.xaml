@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views1="clr-namespace:DailyFitNative.Infrastructure.Controls.Views;assembly=DailyFitNative.Infrastructure"
@@ -8,7 +8,7 @@
             <!-- Colors -->
             <Color x:Key="PrimaryTextColor">White</Color>
             <Color x:Key="PlaceHolderColor">#b1b1b7</Color>
-            <Color x:Key="ButtonBackgroundColor">#52bfbe</Color>
+            <Color x:Key="ButtonBackgroundColor">#2BD195</Color>
 
             <Color x:Key="EntryBackgroundColor">#5A5D71</Color>
 

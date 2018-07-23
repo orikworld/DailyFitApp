@@ -8,6 +8,7 @@
     <Compile Remove="Resources\**" />
     <EmbeddedResource Remove="Resources\**" />
     <None Remove="Resources\**" />
+    <Compile Remove="Modules\Authorization\Registration\RegistrationPage.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,4 +24,9 @@
     <ProjectReference Include="..\DailyFitNative.Infrastructure\DailyFitNative.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Modules\Authorization\" />
+    <Folder Include="Modules\Authorization\Login\" />
+    <Folder Include="Modules\Authorization\Registration\" />
+  </ItemGroup>
 </Project>

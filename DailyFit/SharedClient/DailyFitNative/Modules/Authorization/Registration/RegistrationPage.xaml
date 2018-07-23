@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementations:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:resources="clr-namespace:DailyFitNative.Infrastructure.Resources;assembly=DailyFitNative.Infrastructure"
+                 xmlns:views="clr-namespace:DailyFitNative.Infrastructure.Controls.Views;assembly=DailyFitNative.Infrastructure"
+                 xmlns:implementations="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative"
+                 xmlns:markupExtensions="clr-namespace:DailyFitNative.Infrastructure.Interactions.MarkupExtensions;assembly=DailyFitNative.Infrastructure"
+                 xmlns:validation="clr-namespace:DailyFitNative.Infrastructure.Controls.Ovverides.Validation;assembly=DailyFitNative.Infrastructure"
+                 x:Class="DailyFitNative.Modules.Authorization.Registration.RegistrationPage"
+                 BackgroundImage="{x:Static resources:Images.LoginBackgroundImage}">
+  <Grid RowSpacing="8"
+        Padding="{StaticResource BigLateralSidesThickness}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+
+        <Image VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Source="{x:Static resources:Images.Logo}"/>
+            
+        <validation:ValidationContainer Grid.Row="1"    
+                                        x:TypeArguments="x:String"
+                                        ValidationLabelStyle="{StaticResource ValidationLabelStyle}"
+                                        ValidatableObject="{Binding Login}">
+            <validation:ValidationContainer.Input>
+                <views:EntryWithFrameBorder  Placeholder="{markupExtensions:Translate txtYourEmail}"
+                                             Text="{Binding Login.Value}"
+                                             Style="{StaticResource ExtendedEntryStyle}"
+                                             VerticalOptions="Center">
+                </views:EntryWithFrameBorder>
+            </validation:ValidationContainer.Input>
+        </validation:ValidationContainer>
+
+        <validation:ValidationContainer  Grid.Row="2"
+                                         x:TypeArguments="x:String"
+                                         ValidationLabelStyle="{StaticResource ValidationLabelStyle}"
+                                         ValidatableObject="{Binding Password}">
+            <validation:ValidationContainer.Input>
+                <views:EntryWithFrameBorder  Placeholder="{markupExtensions:Translate txtPassword}"
+                                             Text="{Binding Password.Value}"
+                                             IsPassword="True"
+                                             Style="{StaticResource ExtendedEntryStyle}"
+                                             VerticalOptions="Center">
+                    </views:EntryWithFrameBorder>
+            </validation:ValidationContainer.Input>
+        </validation:ValidationContainer>
+
+        <validation:ValidationContainer  Grid.Row="3"
+                                         x:TypeArguments="x:String"
+                                         ValidationLabelStyle="{StaticResource ValidationLabelStyle}"
+                                         ValidatableObject="{Binding ConfirmPassword}">
+            <validation:ValidationContainer.Input>
+                <views:EntryWithFrameBorder  Placeholder="{markupExtensions:Translate txtConfirmPassword}"
+                                             Text="{Binding ConfirmPassword.Value}"
+                                             IsPassword="True"
+                                             Style="{StaticResource ExtendedEntryStyle}"
+                                             VerticalOptions="Center">
+                    </views:EntryWithFrameBorder>
+            </validation:ValidationContainer.Input>
+        </validation:ValidationContainer>
+
+        <Button Grid.Row="4"
+                VerticalOptions="Center"
+                Command="{Binding RegisterCommand}"
+                Text="{markupExtensions:Translate txtRegister}" 
+                Style="{StaticResource BigRoundedButtonStyle}"/>
+
+         <Label Grid.Row="5"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center">
+            <Label.FormattedText>
+                <FormattedString> 
+                    <Span Text="{markupExtensions:Translate txtHaveAccount}" 
+                          ForegroundColor="{StaticResource PlaceHolderColor}"
+                          FontSize="Micro"/>
+                    <Span Text="{markupExtensions:Translate txtSignIn}" 
+                          ForegroundColor="{StaticResource PrimaryTextColor}"
+                          FontSize="Micro"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </Grid>
+</implementations:BaseContentPage>

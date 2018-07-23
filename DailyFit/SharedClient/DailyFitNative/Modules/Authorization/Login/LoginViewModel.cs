@@ -7,7 +7,7 @@ using DailyFitNative.Infrastructure.Utilities.Validation.Implementations;
 using DailyFitNative.Infrastructure.Utilities.Validation.RuleImplementations;
 using Xamarin.Forms;
 
-namespace DailyFitNative.Modules.Login
+namespace DailyFitNative.Modules.Authorization.Login
 {
 	public class LoginViewModel : BaseViewModel
 	{
@@ -75,7 +75,7 @@ namespace DailyFitNative.Modules.Login
 
 		private void LoginExecute()
 		{
-			NavigationService.Instance.NavigateTo(ViewId.MenuPage);
+            NavigationService.Instance.NavigateTo(ViewId.RegistrationPage);
 		}
 
 		private void CheckLoginEnabledExecute()

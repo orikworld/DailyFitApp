@@ -115,6 +115,12 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\LoginBackgroundImage.png" />
+    <BundleResource Include="Resources\LoginBackgroundImage%402x.png" />
+    <BundleResource Include="Resources\LoginBackgroundImage%403x.png" />
+    <BundleResource Include="Resources\logo.png" />
+    <BundleResource Include="Resources\logo%402x.png" />
+    <BundleResource Include="Resources\logo%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -134,9 +140,6 @@
       <Project>{ca665206-0b2e-462d-b45a-257ae37bd9b2}</Project>
       <Name>DailyFitNative</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\LoginBackGround.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

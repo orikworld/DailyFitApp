@@ -53,6 +53,12 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 			typeof(EntryWithFrameBorder),
 			Color.Gray);
 
+        public static readonly BindableProperty IsPasswordProperty = BindableProperty.Create(
+            nameof(IsPassword),
+            typeof(bool),
+            typeof(EntryWithFrameBorder),
+            false);
+
 		#endregion
 
 		#region Constructors
@@ -109,7 +115,11 @@ namespace DailyFitNative.Infrastructure.Controls.Views
 			set => SetValue(BackgroundColorProperty, value);
 		}
 
-		public bool IsPassword { get; set; }
+        public bool IsPassword 
+        {
+            get => (bool)GetValue(IsPasswordProperty);
+            set => SetValue(IsPasswordProperty, value);
+        }
 
 		public Color BorderColor
 		{

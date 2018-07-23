@@ -141,4 +141,25 @@
   <data name="txtSignIn" xml:space="preserve">
     <value>Sign In</value>
   </data>
+  <data name="txtNotHaveAccount" xml:space="preserve">
+    <value>Don’t have an account? </value>
+  </data>
+  <data name="txtSignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="txtConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="txtHaveAccount" xml:space="preserve">
+    <value> Have an account? </value>
+  </data>
+  <data name="txtRegister" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="txtYourEmail" xml:space="preserve">
+    <value>Your Email</value>
+  </data>
+  <data name="msgEmptyConfirmPassword" xml:space="preserve">
+    <value>Comfirm field cannot be empty</value>
+  </data>
 </root>

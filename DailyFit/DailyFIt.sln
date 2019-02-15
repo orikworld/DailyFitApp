@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyFitNative", "SharedClient\DailyFitNative\DailyFitNative.csproj", "{CA665206-0B2E-462D-B45A-257AE37BD9B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyFitNative", "SharedClient\DailyFitNative\DailyFitNative.csproj", "{CA665206-0B2E-462D-B45A-257AE37BD9B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedClient", "SharedClient", "{76342D86-05EC-41CF-BB65-A0053BBD2C9C}"
 EndProject
@@ -16,13 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{6A75DC61-6EE7-4FB6-996E-0CA0B70CA933}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyFitNative.Models", "DataLayer\DailyFitNative.Models\DailyFitNative.Models.csproj", "{DAF8FD00-6879-4554-99F0-D02F73880E30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyFitNative.Models", "DataLayer\DailyFitNative.Models\DailyFitNative.Models.csproj", "{DAF8FD00-6879-4554-99F0-D02F73880E30}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyFitNative.Repositories", "DataLayer\DailyFitNative.Repositories\DailyFitNative.Repositories.csproj", "{4B888032-0450-4832-AB34-F86E4740B0A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyFitNative.Repositories", "DataLayer\DailyFitNative.Repositories\DailyFitNative.Repositories.csproj", "{4B888032-0450-4832-AB34-F86E4740B0A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyFitNative.Services", "BusinessLayer\DailyFitNative.Services\DailyFitNative.Services.csproj", "{1F1FCDAF-C517-4A04-B233-7EFC25046378}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyFitNative.Services", "BusinessLayer\DailyFitNative.Services\DailyFitNative.Services.csproj", "{1F1FCDAF-C517-4A04-B233-7EFC25046378}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyFitNative.Infrastructure", "SharedClient\DailyFitNative.Infrastructure\DailyFitNative.Infrastructure.csproj", "{FA4B1EAE-6539-43B1-BEAB-6C97CBDF08C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyFitNative.Infrastructure", "SharedClient\DailyFitNative.Infrastructure\DailyFitNative.Infrastructure.csproj", "{FA4B1EAE-6539-43B1-BEAB-6C97CBDF08C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

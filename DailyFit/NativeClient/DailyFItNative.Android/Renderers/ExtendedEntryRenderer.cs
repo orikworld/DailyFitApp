@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Color = Android.Graphics.Color;
 
-[assembly: ExportRenderer(typeof(ExtendedEnty), typeof(ExtendedEntryRenderer))]
+[assembly: ExportRenderer(typeof(ExtendedEntry), typeof(ExtendedEntryRenderer))]
 namespace DailyFitNative.Droid.Renderers
 {
 	public class ExtendedEntryRenderer : EntryRenderer
@@ -26,7 +26,7 @@ namespace DailyFitNative.Droid.Renderers
 		{
 			base.OnElementChanged(e);
 
-			var extendedEnty = (ExtendedEnty) Element;
+			var extendedEnty = (ExtendedEntry) Element;
 
 			if (Control != null)
 			{

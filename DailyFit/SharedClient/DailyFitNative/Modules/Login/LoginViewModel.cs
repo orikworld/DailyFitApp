@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using DailyFitNative.Infrastructure.Core.ViewModels.Abstractions;
+using DailyFitNative.Infrastructure.Utilities.Navigation;
 using Xamarin.Forms;
 
 namespace DailyFitNative.Modules.Login
@@ -28,7 +29,7 @@ namespace DailyFitNative.Modules.Login
 
 		private void LoginCommandExecute()
         {
-           // NavigationService.Instance.SetRootPageAsunc(ViewId.MenuPage);
+           NavigationService.Instance.SetRootPageAsunc(ViewId.MenuPage);
         }
 	}
 }

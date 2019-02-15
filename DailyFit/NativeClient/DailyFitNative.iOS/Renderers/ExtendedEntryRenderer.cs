@@ -4,18 +4,18 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(ExtendedEnty), typeof(ExtendedEntryRenderer))]
+[assembly: ExportRenderer(typeof(ExtendedEntry), typeof(ExtendedEntryRenderer))]
 namespace DailyFitNative.iOS.Renderers
 {
-	public class ExtendedEntryRenderer : EntryRenderer
-	{
-		protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
-		{
-			base.OnElementChanged(e);
+    public class ExtendedEntryRenderer : EntryRenderer
+    {
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        {
+            base.OnElementChanged(e);
 
-			var extendedEnty = (ExtendedEnty)Element;
+            var extendedEnty = (ExtendedEntry)Element;
 
-			if (Control != null)
+            if (Element != null && Control != null)
 			{
 				if (extendedEnty.ClearFormatting)
 				{

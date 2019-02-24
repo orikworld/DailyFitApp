@@ -1,11 +1,11 @@
-﻿<implementations1:BaseContentPage
+<implementations1:BaseContentPage
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:implementations1="clr-namespace:DailyFitNative.Infrastructure.Core.Views.Implementations;assembly=DailyFitNative.Infrastructure"
              x:Class="DailyFitNative.Modules.Menu.MenuPage">
     <implementations1:BaseContentPage.Content>
       <StackLayout>
-          <Label Text =" PSD"></Label>
+          <Label Text ="Menu Page."></Label>
       </StackLayout>
     </implementations1:BaseContentPage.Content>
 </implementations1:BaseContentPage>

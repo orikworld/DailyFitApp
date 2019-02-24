@@ -43,7 +43,7 @@ namespace DailyFitNative.AppStart
             container.RegisterDependency<BaseViewModel, DashboardViewModel>(ViewId.DashboardPage.ToString());
         }
 
-        private static void RegisteMenuDependencies(ICustomContainer container)
+        private static void RegisteMenuDependencies(ICustomContainer container) // Registe
         {
             container.RegisterDependency<Page, MenuPage, BaseViewModel>(
                 ViewId.MenuPage.ToString());

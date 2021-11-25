@@ -6,6 +6,7 @@
         MenuPage = 0,
 
         LoginPage = 100,
-        DashboardPage = 110,
+        RegistrationPage = 110,
+        DashboardPage = 130,
     }
 }

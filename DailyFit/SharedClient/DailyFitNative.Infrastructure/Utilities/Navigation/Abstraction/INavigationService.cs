@@ -17,8 +17,6 @@ namespace DailyFitNative.Infrastructure.Utilities.Navigation.Abstraction
 
         Task NavigateTo(ViewId viewId, bool animated = false);
 
-        Task NavigateToMasterPage(ViewId masterId, ViewId? detailsId, bool animated = false);
-
         Task NavigateToModal(ViewId viewId, bool animated = false);
 
         Task SetRootPageAsunc(ViewId viewId, bool animated = false);
@@ -29,7 +27,7 @@ namespace DailyFitNative.Infrastructure.Utilities.Navigation.Abstraction
 
         void HideSliderMenu();
 
-        #endregion
+	    #endregion
 
     }
 }

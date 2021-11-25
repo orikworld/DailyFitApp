@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DailyFitNative.Infrastructure.Core.Views.Abstractions;
@@ -114,9 +113,10 @@ namespace DailyFitNative.Infrastructure.Utilities.Navigation.Implementation
         {
             var page = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(viewId.ToString());
 
-            if (page is IBasePage mainPage)
+            if (page is IBasePage basePage)
             {
-                mainPage.ViewId = viewId;
+	            basePage.Init();
+	            basePage.ViewId = viewId;
             }
 
             return PushAsync(page, animated);
@@ -126,9 +126,10 @@ namespace DailyFitNative.Infrastructure.Utilities.Navigation.Implementation
         {
             var page = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(viewId.ToString());
 
-            if (page is IBasePage mainPage)
+            if (page is IBasePage basePage)
             {
-                mainPage.ViewId = viewId;
+	            basePage.Init();
+	            basePage.ViewId = viewId;
             }
 
             return PushModalAsync(page, animated);
@@ -138,11 +139,20 @@ namespace DailyFitNative.Infrastructure.Utilities.Navigation.Implementation
         {
             if (viewId == ViewId.MenuPage)
             {
-                _masterDetailPage = new BaseMasterDetailPage()
+	            var detailPage = new BaseNavigationPage(
+		            DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.DashboardPage.ToString()));
+
+	            if (detailPage is IBasePage basePage)
+	            {
+		            basePage.ViewId = ViewId.DashboardPage;
+					basePage.Init();
+	            }
+
+				_masterDetailPage = new BaseMasterDetailPage()
                 {
-                    Detail = new BaseNavigationPage(
-                        DependencyManager.Instance.ServiceLocator.GetInstance<Page>(ViewId.DashboardPage.ToString())),
-                    MasterBehavior = MasterBehavior.Popover,
+                    Detail = detailPage,
+
+					MasterBehavior = MasterBehavior.Popover,
                 };
                
 
@@ -175,17 +185,12 @@ namespace DailyFitNative.Infrastructure.Utilities.Navigation.Implementation
         {
             var page = new BaseNavigationPage(menuItemMenuPage);
 
-            _masterDetailPage.Detail = page;
+			_masterDetailPage.Detail = page;
             _masterDetailPage.IsPresented = false;
 
             FormsNavigation = _masterDetailPage.Detail.Navigation;
             ModalStack = FormsNavigation.ModalStack;
             NavigationStack = FormsNavigation.NavigationStack;
-        }
-
-        public void NavigateFromMasterPage()
-        {
-            throw new NotImplementedException();
         }
 
         public void HideSliderMenu()
@@ -196,19 +201,21 @@ namespace DailyFitNative.Infrastructure.Utilities.Navigation.Implementation
             }
         }
 
-        public Task NavigateToMasterPage(ViewId masterId, ViewId? detailsId, bool animated = false)
-        {
-            return NavigateTo(masterId, animated);
-        }
+		#endregion
 
-        #endregion
+		#region Private Methods
 
-        #region Private Methods
-
-        private void SetMenuPage(ViewId viewId)
+		private void SetMenuPage(ViewId viewId)
         {
             var page = DependencyManager.Instance.ServiceLocator.GetInstance<Page>(viewId.ToString());
+
             page.Title = AppResources.txtAppName;
+
+	        if (page is IBasePage basePage)
+	        {
+		        basePage.Init();
+		        basePage.ViewId = viewId;
+	        }
 
             _masterDetailPage.Master = page;
         }

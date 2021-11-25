@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="msgEmptyMail" xml:space="preserve">
+    <value>Email required.</value>
+  </data>
+  <data name="msgEmptyPassword" xml:space="preserve">
+    <value>Password is required.</value>
+  </data>
+  <data name="msgInvalidEmail" xml:space="preserve">
+    <value>Login should be a valid email address.</value>
+  </data>
   <data name="txtAppName" xml:space="preserve">
     <value>DailyFIt</value>
   </data>
@@ -131,5 +140,26 @@
   </data>
   <data name="txtSignIn" xml:space="preserve">
     <value>Sign In</value>
+  </data>
+  <data name="txtNotHaveAccount" xml:space="preserve">
+    <value>Don’t have an account? </value>
+  </data>
+  <data name="txtSignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="txtConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="txtHaveAccount" xml:space="preserve">
+    <value> Have an account? </value>
+  </data>
+  <data name="txtRegister" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="txtYourEmail" xml:space="preserve">
+    <value>Your Email</value>
+  </data>
+  <data name="msgEmptyConfirmPassword" xml:space="preserve">
+    <value>Comfirm field cannot be empty</value>
   </data>
 </root>

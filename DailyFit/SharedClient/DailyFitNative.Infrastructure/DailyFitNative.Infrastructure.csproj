@@ -5,7 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <Compile Remove="Controls\Ovverides\Validations\**" />
+    <Compile Remove="Interactions\Behaviors\Validation\**" />
+    <EmbeddedResource Remove="Controls\Ovverides\Validations\**" />
+    <EmbeddedResource Remove="Interactions\Behaviors\Validation\**" />
+    <None Remove="Controls\Ovverides\Validations\**" />
+    <None Remove="Interactions\Behaviors\Validation\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controls\Ovverides\AsteriskLabel.cs" />
+    <Compile Remove="Controls\Ovverides\ValidationContainer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Unity" Version="5.8.6" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
   </ItemGroup>
@@ -26,6 +39,21 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Resources\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\Ovverides\Validation\Abstractions\" />
+  </ItemGroup>
 </Project>

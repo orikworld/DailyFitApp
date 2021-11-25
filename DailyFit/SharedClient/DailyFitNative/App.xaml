@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views1="clr-namespace:DailyFitNative.Infrastructure.Controls.Views;assembly=DailyFitNative.Infrastructure"
@@ -8,7 +8,7 @@
             <!-- Colors -->
             <Color x:Key="PrimaryTextColor">White</Color>
             <Color x:Key="PlaceHolderColor">#b1b1b7</Color>
-            <Color x:Key="ButtonBackgroundColor">#52bfbe</Color>
+            <Color x:Key="ButtonBackgroundColor">#2BD195</Color>
 
             <Color x:Key="EntryBackgroundColor">#5A5D71</Color>
 
@@ -16,9 +16,49 @@
 
             <Thickness x:Key="BigLateralSidesThickness">40, 0, 40, 0</Thickness>
 
+            <!-- Validation -->
+            <Style x:Key="ValidationLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+
+            <Style x:Key="DetailsLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="{StaticResource PlaceHolderColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="ValidationControlStyle" TargetType="views1:EntryWithFrameBorder">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="ValidationStates">
+
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="Silver"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Invalid">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="Red"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Valid">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="ForestGreen"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
             <!-- Styles -->
 
-            <Style x:Key="ExtendedEntryStyle" TargetType="views1:EntryWithFrameBorder">
+            <Style x:Key="ExtendedEntryStyle" TargetType="views1:EntryWithFrameBorder" BasedOn="{StaticResource ValidationControlStyle}">
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}"/>
@@ -31,17 +71,7 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
             </Style>
             
-            <!-- Validation -->
-            <Style x:Key="ValidationLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="Red" />
-                <Setter Property="FontSize" Value="14" />
-            </Style>
-
-            <Style x:Key="DetailsLabelStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="TextColor" Value="{StaticResource PlaceHolderColor}" />
-                <Setter Property="VerticalOptions" Value="Center" />
-            </Style>
+         
 
         </ResourceDictionary>
     </Application.Resources>

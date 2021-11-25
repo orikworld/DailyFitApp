@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace DailyFitNative.Infrastructure.Interactions.Behaviors.Validation.Abstactions
 {
-	public abstract class ValidationRuleBehavior<T> : BaseBehavior<T>, IValidator where T : VisualElement
+	public abstract class ValidationRuleBehavior<T> : BaseBehavior<T>, IValidity where T : VisualElement
 	{
 		#region Properties
 
@@ -46,7 +46,7 @@ namespace DailyFitNative.Infrastructure.Interactions.Behaviors.Validation.Abstac
 
 		#endregion
 
-		#region Implementation of IValidator
+		#region Implementation of IValidity
 
 		public abstract bool Validate();
 

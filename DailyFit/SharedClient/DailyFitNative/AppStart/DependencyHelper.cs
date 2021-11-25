@@ -4,6 +4,8 @@ using DailyFitNative.Infrastructure.DependencyInjection.Interfaces;
 using DailyFitNative.Infrastructure.Utilities.Navigation;
 using DailyFitNative.Infrastructure.Utilities.Navigation.Abstraction;
 using DailyFitNative.Infrastructure.Utilities.Navigation.Implementation;
+using DailyFitNative.Modules.Authorization.Login;
+using DailyFitNative.Modules.Authorization.Registration;
 using DailyFitNative.Modules.Dashboard;
 using DailyFitNative.Modules.Login;
 using DailyFitNative.Modules.Menu;
@@ -53,10 +55,11 @@ namespace DailyFitNative.AppStart
 
         private static void RegisteLoginDependencies(ICustomContainer container)
         {
-            container.RegisterDependency<Page, LoginPage, BaseViewModel>(
-                ViewId.LoginPage.ToString());
-
+            container.RegisterDependency<Page, LoginPage, BaseViewModel>(ViewId.LoginPage.ToString());
             container.RegisterDependency<BaseViewModel, LoginViewModel>(ViewId.LoginPage.ToString());
+
+            container.RegisterDependency<Page, RegistrationPage, BaseViewModel>(ViewId.RegistrationPage.ToString());
+            container.RegisterDependency<BaseViewModel, RegistrationViewModel>(ViewId.RegistrationPage.ToString());
         }
 
         #endregion        
